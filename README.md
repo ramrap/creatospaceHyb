@@ -11,3 +11,4 @@ You can use `ctrl+c` on your terminal to terminate the session.
 To work on a feature, create a new branch. Keep pushing your code on that branch and send a pull request on master once done.<br/>
 Remember: Do not commit directly on the master branch.</br>
 Note: WebStorm is a good IDE for for working on JavaScript code. It is recommended to use WebStorm for this project. 
+Testing - Harshil
