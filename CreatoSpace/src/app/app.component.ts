@@ -4,6 +4,10 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+function log(target, name, description) {
+  console.log(target, name, description)
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -24,4 +28,9 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+}
+
+@log
+aSimpleMethod() {
+  
 }
