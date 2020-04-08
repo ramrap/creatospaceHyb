@@ -1,0 +1,147 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center" >  
+    <mat-card class="example-card" layout-align="center center" style="min-width: 400px;">
+      <div class="container" fxLayout="column" fxLayoutGap="10%">
+      <div class="child">
+      <div class="container" fxLayout="column" fxLayoutGap="1%"  fxLayoutAlign.xs="center center" fxLayoutAlign.sm="center center">
+        
+        
+          <div class="child" fxFlex.xs="80%" fxFlex.sm="80%">
+            <mat-card-title>
+              <div class="container" fxLayout="column" fxLayoutAlign="center center" >
+                <div>
+                  <img src="assets/logo.png" alt="image" height="200" width="200" align="middle"><br>
+                </div>
+                <div class="child" style="font-size: 45px;">
+                  creatospace
+                </div>
+              </div>
+            </mat-card-title>
+          </div>
+          <p style="text-align: center;">Create your account</p>
+          <div class="child" fxFlex.xs="50%" fxFlex.sm="50%">
+          <mat-card-content style="margin-top: 10%;">
+      
+
+
+
+
+          <div class="container" fxLayout="row">
+            
+            <div class="child" fxFlex.xs="99%" fxFlex.sm="99%">
+              <div class="container" fxLayout="column" fxLayoutGap="5%" fxLayoutGap.xs="10%" fxLayoutGap.sm="10%">
+              <div class="child">
+                <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="2%" fxLayoutGap.lt-md="0%" fxLayout.sm="column">
+                  <div class="child" fxFlex="50">
+
+                    <mat-form-field hideRequiredMarker appearance="outline">
+                      <mat-label>First name</mat-label>
+                      <input #firstName required matInput name="firstName" [formControl]="firstName"  >
+                      <mat-error *ngIf="firstName.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+
+                  </div>
+                  <div class="child" fxFlex="50">
+                    <mat-form-field hideRequiredMarker appearance="outline" >
+                      <mat-label>Last name</mat-label>
+                      <input #lastName matInput required name="lastName" [formControl]="lastName" >  
+                      <mat-error *ngIf="lastName.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+               <div class="child">
+                <div class="container">
+                  <div fxFlex="25" fxFlex.lt-md="0"></div>  
+                  <div fxFlex="50" fxFlex.lt-md="100">
+                    <mat-form-field >
+                        <mat-label>Date of Birth</mat-label>
+                        <input #dob required name="dob" matInput [matDatepicker]="picker" [formControl]="username" > 
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-hint>Select your date of birth</mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div fxFlex="25" fxFlex.lt-md="0"></div>
+                </div>
+              </div>
+              <div class="child">
+                <div class="container">
+                  
+                  <div class="child" fxFlex="50" fxFlex.lt-md="100">
+                    <mat-form-field appearance="outline" hideRequiredMarker >
+                        <mat-label>Phone Number</mat-label>
+                        <input type="number" minlength="10" maxlength="10" #phno required name="phno" matInput [formControl]="phno" > 
+                        <mat-error *ngIf="phno.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="child" fxFlex="50" fxFlex.lt-md="100" style="text-align: center; padding: 3%;">
+                    <button mat-raised-button color="primary" routerLink="/signup">verify</button>
+                    <!-- here we will have the link to verify phone number through OTP -->
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- <div class="child">
+                <div class="container">
+                  <div fxFlex="25" fxFlex.lt-md="0"></div>  
+                  <div fxFlex="50" fxFlex.lt-md="100">
+                    <mat-form-field appearance="outline" hideRequiredMarker >
+                        <mat-label>Username</mat-label>
+                        <input #username required name="Username" matInput [formControl]="username" > 
+                        <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+                        <mat-hint>make a username</mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div fxFlex="25" fxFlex.lt-md="0"></div>
+                </div>
+              </div> -->
+              <div class="child" >
+                <div fxLayoutAlign="start start" class="container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap.xs="10%" fxLayoutGap.sm="10%" fxLayoutGap="2%" >
+                  <div class="child" fxFlex="50">
+                      <mat-form-field appearance="outline" hideRequiredMarker >
+                        <mat-label>Password</mat-label>
+                        <input #password required name="password" matInput type="password" minlength="8" [formControl]="password" >
+                        <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error> 
+                        <mat-hint >Use 8 or more characters with a mix of letters, numbers and characters</mat-hint>
+                      </mat-form-field>
+                  </div>
+                  <div class="child" fxFlex="50">
+                    <mat-form-field appearance="outline" hideRequiredMarker >
+                      <mat-label>Confirm</mat-label>
+                      <input name="Confirm" matInput type="password" minlength="8" required [formControl]="confirm" > 
+                      <mat-error *ngIf="confirm.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              </div>
+            </div>
+
+          </div>  
+
+ 
+          </mat-card-content>
+          </div>
+      </div>
+      </div>
+      <div class="child">
+      <mat-card-actions >
+          <div class="container" fxLayout="row" fxLayoutGap="50%" fxLayoutGap.lt-md="5%" fxLayout.xs="column" fxLayoutAlign="center center">
+              <div >
+                <button mat-raised-button color="primary" routerLink="">Log in instead</button>
+              </div>  
+              <div  >
+                <button mat-raised-button color="primary" routerLink="/home" onclick="signup()">Sign up</button>
+              </div>
+            
+          </div>
+      </mat-card-actions>
+      </div>
+    </div>
+    </mat-card>
+</div>
+
+
+<router-outlet></router-outlet>
+

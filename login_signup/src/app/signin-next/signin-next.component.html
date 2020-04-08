@@ -1,0 +1,43 @@
+<div class="container" fxLayoutAlign="center center" >
+    <mat-card class="example-card" layout-align="center center">
+    <p>  
+      <br>
+      <mat-card-title>
+        <div class="container" fxLayout="column" fxLayoutAlign="center center">
+          <div>
+            <img src="assets/todo.png" alt="image" height="200" width="320" align="middle"><br>
+          </div>
+          <div class="child">
+            Welcome
+          </div>
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+          <div class="container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10%">
+          <div >to the To Do app</div>
+          <div>
+          <mat-form-field appearance="outline" hideRequiredMarker>
+            <mat-label>Password</mat-label>
+            <input matInput name="password" id="password" type="password" minlength="8" [formControl]="password"> 
+            <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+          </div>
+          </div>
+      </mat-card-content> 
+      
+      <mat-card-actions >
+        <div class="container" fxLayout="row" fxLayoutGap="10%" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutGap.lt-md="10%">
+          <div class="child">
+            <button mat-raised-button routerLink="/signup">Register</button>
+          </div>
+          <div class="child">
+            <button  mat-raised-button routerLink="/home" >Sign in</button>
+          </div>
+        </div>
+      </mat-card-actions>
+    </p>
+    </mat-card>
+</div> 
+
+    <router-outlet></router-outlet>
+    
