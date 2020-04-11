@@ -1,0 +1,19 @@
+<ion-header>
+	<ion-toolbar color="primary">
+		<ion-title>
+			creatospace
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <swipe-ui [cards]="cards" (choiceMade)="logChoice($event)"></swipe-ui>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" (click)="loadswipeCards()">Load swipeCards!</ion-button>
+  </ion-toolbar>
+</ion-footer>
