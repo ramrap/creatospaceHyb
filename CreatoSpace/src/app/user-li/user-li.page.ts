@@ -3,6 +3,7 @@ import { UserLiService } from './user-li.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from './user-li.model';
 
+
 @Component({
   selector: 'app-user-li',
   templateUrl: './user-li.page.html',
