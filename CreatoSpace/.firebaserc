@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "creatospace-work": {
+      "hosting": {
+        "app": [
+          "creatospace-work"
+        ]
+      }
+    }
+  }
+}

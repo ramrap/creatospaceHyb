@@ -12,19 +12,38 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="container">
+
+  <div id="chatMessages">
+    <div class="message" *ngFor="let msg of messages" >
+      <div [class]="msg.receiverId==user.id ? 'messageRight' :'messageLeft'">
+        <div class="innermessage">
+          <div class="username">{{user.name}}</div>
+          <div class="message">{{msg.message}} </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+    
+  </div>
   
 
 </ion-content>
 
 <ion-footer class="ion-no-border">
+
   <ion-toolbar>
     <ion-item>
+      <ion-input ></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label position="floating" >Write Your Message here</ion-label>
-      <ion-input [(ngModel)]="message" (click)="sendMessage()"></ion-input>
+      <ion-input [(ngModel)]="message" ></ion-input>
     </ion-item>
     
-    <ion-button>
+    <ion-button (click)="sendMessage()">
       Send
     </ion-button>
   </ion-toolbar>

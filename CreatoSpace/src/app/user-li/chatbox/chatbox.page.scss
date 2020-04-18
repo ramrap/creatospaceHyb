@@ -1,0 +1,36 @@
+#chatMessages{
+    box-sizing: content-box;
+
+}
+.container{
+    background-image: linear-gradient(black , grey);
+
+}
+.message{
+    display: block;
+    width:100%;
+    padding: 3px;
+}
+.messageLeft {
+    flex-direction: row;
+    display: flex;
+    text-align: left;
+}
+.messageRight {
+    flex-direction: row-reverse;
+    display: flex;
+    text-align: right;
+}
+.messageLeft .innermessage{
+    border: 1px solid white;
+}
+.messageRight .innermessage{
+    border: 1px solid white;
+}
+
+// .messageLeft {
+//     float: left;
+// }
+// .messageRight{
+//     float:right;
+// }

@@ -13,6 +13,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+
 
 
 @NgModule({
@@ -20,7 +23,9 @@ import { environment } from '../environments/environment';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
-    AngularFirestoreModule,],
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,

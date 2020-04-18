@@ -14,17 +14,26 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class ChatboxPage implements OnInit {
   //!!!!!!!!!!!!!!!!!!!!!!
-  username:string=""
-  message:string=""
 
+
+//$$$$$$$******************
+//__________________________________________________________________
+  //sender Id fill by urself for now ........
+  senderId:string=""
+  message:string=""
+  receiverId:string=''
+//__________________________________________________________________
   //item: Observable<any[]>
+  messages:Object[]=[];
   user:User;
+  s;
   constructor(private activatedroute:ActivatedRoute,
     private router:Router,
   private userService:UserLiService ,
-  private db:AngularFirestore) { }
+  private db:AngularFireDatabase) { }
 
   ngOnInit() {
+
     this.activatedroute.paramMap.subscribe(paraMap=>{
       console.log(paraMap.has('userid'));
       
@@ -37,6 +46,15 @@ export class ChatboxPage implements OnInit {
       const userId=paraMap.get('userid');
 
       this.user=this.userService.getUser(userId);
+      this.receiverId=this.user.id;
+
+      this.s = this.db.list('/chat').valueChanges().subscribe( data => {
+        this.messages=data;
+        
+      }
+    );
+      
+      
       
     }
     )
@@ -47,23 +65,20 @@ export class ChatboxPage implements OnInit {
    
   }
   sendMessage(){
-
-    const chat={
-      message:this.message,
-     
+    console.log(this.message);
+    if(this.message.trim()==""){
+      console.log("khali he bhai");
+      
+      return;
     }
+    this.db.list('/chat/').push({
+      senderId:this.senderId,
+      receiverId:this.receiverId,
+      message:this.message.trim(),
+    })
 
-
-     this.db.collection('policies').add(chat).then(function(){
-       console.log("updating on firestore");
-      
-       
-     })
-     ;
      this.message="";
-  
-  
-      
+
   };
   
 
